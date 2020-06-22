@@ -29,7 +29,7 @@ class Video extends Base
             return $this->writeJson(Status::CODE_BAD_REQUEST, "请求不合法");
         }
 
-        // 获取视频的基本信息
+        //  获取视频的基本信息
         try {
             $video = (new VideoModel())->getById($id);
         }catch(\Exception $e) {
