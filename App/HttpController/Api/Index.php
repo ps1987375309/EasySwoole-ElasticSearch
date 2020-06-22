@@ -35,6 +35,23 @@ class Index extends Base
     }
     
     public function getVideo() {
+        /*
+         * 
+         * 框架配置文件注入写法
+         * 注册文件EasySwooleEvent.php
+         */
+        
+        Di::getInstance()->get("MYSQL")->queryBuilder()->get('video');
+        $result = Di::getInstance()->get("MYSQL")->execBuilder();
+        var_dump($result);
+        return $this->writeJson(200, 'OK', $result);
+        
+        
+        /*
+         * 
+         * 原生配置方法
+         */
+        
         $config = new \EasySwoole\Mysqli\Config([
             'host'          => '127.0.0.1',
             'port'          => 3306,

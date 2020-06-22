@@ -24,6 +24,11 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement mainServerCreate() method.
         
+        $mysql_config = new \EasySwoole\Mysqli\Config(\Yaconf::get("mysql"));
+        
+        Di::getInstance()->set('MYSQL', new \EasySwoole\Mysqli\Client($mysql_config));
+        
+        
         Di::getInstance()->set('REDIS', Redis::getInstance());    //注册REDIS，下次其他地方就可以直接调用，就相当于REDIS = Redis::getInstance()
         
         $allNum = 3;

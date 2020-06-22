@@ -26,6 +26,7 @@ class ComposerStaticInit3260770b34a9974638a07f93f91ebf31
         ),
         'E' => 
         array (
+            'EasySwoole\\Validate\\' => 20,
             'EasySwoole\\Utility\\' => 19,
             'EasySwoole\\Trigger\\' => 19,
             'EasySwoole\\Task\\' => 16,
@@ -67,6 +68,10 @@ class ComposerStaticInit3260770b34a9974638a07f93f91ebf31
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'EasySwoole\\Validate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/validate/src',
         ),
         'EasySwoole\\Utility\\' => 
         array (
