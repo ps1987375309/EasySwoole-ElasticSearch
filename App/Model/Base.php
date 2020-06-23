@@ -4,6 +4,9 @@ use EasySwoole\Component\Di;
 class Base {
 	public $db = "";
 	public $builder ="";
+	/*
+	 * 第一套数据库连接方式swoole自带扩展
+	 */
 	public function __construct() {
 	    
 // 	    Di::getInstance()->get("MYSQL")->queryBuilder()->get('video');

@@ -20,3 +20,7 @@
 [2020-06-22 19:28:27 *31522.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
 [2020-06-22 19:28:27 *31523.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
 [2020-06-22 19:28:27 *31523.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2020-06-23 16:35:29 *3856.3]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Declaration of App\HttpController\Api\Index::onRequest(?string $action): ?bool must be compatible with App\HttpController\Api\Base::onRequest($action): bool in /root/workspace/EasySwoole/App/HttpController/Api/Index.php on line 14
+[2020-06-23 16:35:29 $3849.0]	WARNING	swManager_check_exit_status: worker#3[pid=3856] abnormal exit, status=255, signal=0
+[2020-06-23 16:42:30 *4302.3]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Declaration of App\HttpController\Api\Base::onRequest(?string $action) must be compatible with EasySwoole\Http\AbstractInterface\Controller::onRequest(?string $action): ?bool in /root/workspace/EasySwoole/App/HttpController/Api/Base.php on line 12
+[2020-06-23 16:42:30 $4295.0]	WARNING	swManager_check_exit_status: worker#3[pid=4302] abnormal exit, status=255, signal=0

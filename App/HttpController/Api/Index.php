@@ -2,7 +2,12 @@
 namespace App\HttpController\Api;
 use App\Lib\Redis\Redis;
 use EasySwoole\Component\Di;
+use App\Model\Video as VideoModel;
+use EasySwoole\Http\Message\Status;
 
+use App\Lib\Cache\Video as VideoCache;
+
+use EasySwoole\FastCache\Cache;
 /**
  *
  * Class Index.
@@ -10,14 +15,55 @@ use EasySwoole\Component\Di;
  */
 class Index extends Base
 {
-    /*
-     * 复写父类中的方法
+    /**
+     * 第一套方案 原始  - 读取 Mysql
+     * [lists description]
+     * @auth   singwa
+     * @return 
      */
-    public function onRequest(?string $action): ?bool
-    {
-//         $this->writeJson(403, '你没有访问权限', ['']);
-        return true;
+    public function lists0() {
+        $condition = [];
+        if(!empty($this->params['cat_id'])) {
+            $condition['cat_id'] = intval($this->params['cat_id']);
+        }
+        try {
+            $videoModel = new VideoModel();
+            $data = $videoModel->getVideoData($condition, $this->params['page'], $this->params['size']);
+//             $data = $videoModel->getVideoData($condition, 1,5);
+        }catch(\Exception $e) {
+            return $this->writeJson(Status::CODE_BAD_REQUEST, "服务异常");
+        }
+//         var_dump($data);
+        if(!empty($data['lists'])) {
+            foreach($data['lists'] as &$list) {
+                $list['create_time'] = date("Ymd H:i:s", $list['create_time']);
+                $list['video_duration'] = gmstrftime("%H:%M:%S", $list['video_duration']);
+            }
+        }
     }
+    
+    /**
+     * 第二套方案 直接读取 静态化 json数据
+     * [lists description]
+     * @auth   singwa
+     * @return 
+     */
+    public function lists() {
+//         Cache::getInstance()->set('a',time());
+//         var_dump(Cache::getInstance()->get('a'));
+        
+        $catId = !empty($this->params['cat_id']) ? intval($this->params['cat_id']) : 0;
+        try {
+            $videoData = (new VideoCache())->getCache($catId);
+        }catch(\Exception $e) {
+            return $this->writeJson(Status::CODE_BAD_REQUEST , "请求失败");
+        }
+        return $this->writeJson(Status::CODE_OK, "OK", $videoData); 
+
+        $count = count($videoData);
+        return $this->writeJson(Status::CODE_OK, "OK", $this->getPagingDatas($count, $videoData)); 
+    }
+    
     
     /**
      * 首页方法

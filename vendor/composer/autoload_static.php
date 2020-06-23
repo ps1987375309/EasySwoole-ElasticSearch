@@ -9,6 +9,8 @@ class ComposerStaticInit3260770b34a9974638a07f93f91ebf31
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        '9c9a81795c809f4710dd20bec1e349df' => __DIR__ . '/..' . '/joshcam/mysqli-database-class/MysqliDb.php',
+        '94df122b6b32ca0be78d482c26e5ce00' => __DIR__ . '/..' . '/joshcam/mysqli-database-class/dbObject.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -40,6 +42,7 @@ class ComposerStaticInit3260770b34a9974638a07f93f91ebf31
             'EasySwoole\\Mysqli\\' => 18,
             'EasySwoole\\Log\\' => 15,
             'EasySwoole\\Http\\' => 16,
+            'EasySwoole\\FastCache\\' => 21,
             'EasySwoole\\EasySwoole\\' => 22,
             'EasySwoole\\Config\\Test\\' => 23,
             'EasySwoole\\Config\\' => 18,
@@ -124,6 +127,10 @@ class ComposerStaticInit3260770b34a9974638a07f93f91ebf31
         'EasySwoole\\Http\\' => 
         array (
             0 => __DIR__ . '/..' . '/easyswoole/http/src',
+        ),
+        'EasySwoole\\FastCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easyswoole/fast-cache/src',
         ),
         'EasySwoole\\EasySwoole\\' => 
         array (
