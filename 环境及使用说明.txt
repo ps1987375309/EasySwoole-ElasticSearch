@@ -1,0 +1,22 @@
+1.本环境是直接借助宝塔环境使用的
+
+PHP版本7.2.31
+Swoole版本4.4.16
+Easyswoole版本3.3.7
+Redis版本5.0.8
+Elasticsearch版本6.5.4  （第八章开始使用，前面章节可以忽略）
+Elasticsearch-head插件
+
+2.使用说明
+
+开启easyswoole服务，在项目根目录执行： php easyswoole start    
+开启Elasticsearch服务，在elastinsearch安装目录bin中执行：./elastinsearch
+独立安装还需要开启redis服务，在安装目录redis/src中执行：./redis-server
+
+本系统为API接口系统，测试需要手动在浏览器输入地址，如：
+http://127.0.0.1:8000/api/video/index?id=15
+
+使用注意点：
+1.当涉及到数据库的使用需要注意model文件夹中的 video.php 和 base.php  这两个文件中分别使用了不同的数据库连接方式，实际使用接口的时候可能会报错，
+这时需要注释其中一个文件中的方式
+2.项目根目录EastSwooleEvent.php文件中含有多个被注释的代码，如进程，定时任务等，尽量在需要的时候开启，不然可能会出现报错
