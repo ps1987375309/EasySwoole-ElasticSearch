@@ -3,7 +3,6 @@ namespace App\Model;
 use EasySwoole\Component\Di;
 class Base {
 	public $db = "";
-	public $builder ="";
 	/*
 	 * 第一套数据库连接方式swoole自带扩展
 	 */
@@ -48,9 +47,9 @@ class Base {
         if(empty($id)) {
             return [];
         }
-
-        $this->db->where ("id", $id);
-        $result = $this->db->getOne($this->tableName);
+        $this->db->queryBuilder()->where ("id", $id)->getOne($this->tableName);
+        $result = $this->db->execBuilder();
+//         var_dump($this->db->queryBuilder()->getLastQuery());
         return $result ?? [];
     }
 }

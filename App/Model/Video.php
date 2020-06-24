@@ -8,6 +8,7 @@ class Video extends Base{
     
     /*
      * 第二套数据库连接方式，扩展插件，第一套在父类base中
+     * 注意和第一套中方式不能同时使用，此处只是演示两种实现方式
      */
     public function __construct() {
         if(empty($this->tableName)) {

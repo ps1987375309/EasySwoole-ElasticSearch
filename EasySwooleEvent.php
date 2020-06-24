@@ -39,21 +39,22 @@ class EasySwooleEvent implements Event
         /*
          * 自动后台添加进程
          */
-        $allNum = 3;
-        for ($i = 0 ;$i < $allNum;$i++){
-            $processConfig= new \EasySwoole\Component\Process\Config();
-            $processConfig->setProcessName('ConsumerTest'.$i);//设置进程名称
-            Manager::getInstance()->addProcess(new ConsumerTest($processConfig));
-        }
+//         $allNum = 3;
+//         for ($i = 0 ;$i < $allNum;$i++){
+//             $processConfig= new \EasySwoole\Component\Process\Config();
+//             $processConfig->setProcessName('ConsumerTest'.$i);//设置进程名称
+//             Manager::getInstance()->addProcess(new ConsumerTest($processConfig));
+//         }
         // 开始一个定时任务计划
 //         Crontab::getInstance()->addTask(OddNumber::class);
         
         
         //使用定时器将数据写入到json中，以后客户获取数据不进行数据库访问，更加快速
-        $cacheVideoObj = new videoCache();
-        Timer::getInstance()->loop(1000*2, function() use($cacheVideoObj) {
-            $cacheVideoObj->setIndexVideo();
-        });
+        
+//         $cacheVideoObj = new videoCache();
+//         Timer::getInstance()->loop(1000*2, function() use($cacheVideoObj) {
+//             $cacheVideoObj->setIndexVideo();
+//         });
         
         
     }

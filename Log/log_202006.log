@@ -219,3 +219,25 @@
 [2020-06-23 17:32:16][debug][warning]:[Swoole\Server::addProcess(): server is running, can't add process at file:/root/workspace/EasySwoole/vendor/easyswoole/fast-cache/src/Cache.php line:814]
 [2020-06-23 17:32:16][debug][warning]:[Swoole\Server::addProcess(): server is running, can't add process at file:/root/workspace/EasySwoole/vendor/easyswoole/fast-cache/src/Cache.php line:814]
 [2020-06-23 17:32:16][debug][warning]:[Swoole\Server::addProcess(): server is running, can't add process at file:/root/workspace/EasySwoole/vendor/easyswoole/fast-cache/src/Cache.php line:814]
+[2020-06-24 08:58:29][debug][error]:[Call to a member function queryBuilder() on string at file:/root/workspace/EasySwoole/App/Model/Base.php line:52]
+[2020-06-24 09:02:12][debug][error]:[Uncaught Error: Call to a member function where() on string in /root/workspace/EasySwoole/App/Model/Video.php:68
+Stack trace:
+#0 /root/workspace/EasySwoole/App/Lib/Cache/Video.php(22): App\Model\Video->getVideoCacheData(Array)
+#1 /root/workspace/EasySwoole/EasySwooleEvent.php(55): App\Lib\Cache\Video->setIndexVideo()
+#2 {main}
+  thrown at file:/root/workspace/EasySwoole/App/Model/Video.php line:68]
+[2020-06-24 09:02:23][debug][error]:[Uncaught Error: Call to a member function where() on string in /root/workspace/EasySwoole/App/Model/Video.php:68
+Stack trace:
+#0 /root/workspace/EasySwoole/App/Lib/Cache/Video.php(22): App\Model\Video->getVideoCacheData(Array)
+#1 /root/workspace/EasySwoole/EasySwooleEvent.php(55): App\Lib\Cache\Video->setIndexVideo()
+#2 {main}
+  thrown at file:/root/workspace/EasySwoole/App/Model/Video.php line:68]
+[2020-06-24 09:02:23][debug][error]:[Cannot use object of type EasySwoole\Mysqli\QueryBuilder as array at file:/root/workspace/EasySwoole/App/HttpController/Api/Video.php line:39]
+[2020-06-24 09:03:43][debug][error]:[Uncaught Error: Call to undefined method App\Model\Video::getVideoCacheData() in /root/workspace/EasySwoole/App/Lib/Cache/Video.php:22
+Stack trace:
+#0 /root/workspace/EasySwoole/EasySwooleEvent.php(55): App\Lib\Cache\Video->setIndexVideo()
+#1 {main}
+  thrown at file:/root/workspace/EasySwoole/App/Lib/Cache/Video.php line:22]
+[2020-06-24 09:05:09][debug][error]:[Call to a member function queryBuilder() on string at file:/root/workspace/EasySwoole/App/Model/Base.php line:50]
+[2020-06-24 09:05:32][debug][error]:[Cannot use object of type EasySwoole\Mysqli\QueryBuilder as array at file:/root/workspace/EasySwoole/App/HttpController/Api/Video.php line:39]
+[2020-06-24 09:18:04][debug][error]:[Call to a member function queryBuilder() on string at file:/root/workspace/EasySwoole/App/Model/Base.php line:50]

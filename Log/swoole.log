@@ -24,3 +24,20 @@
 [2020-06-23 16:35:29 $3849.0]	WARNING	swManager_check_exit_status: worker#3[pid=3856] abnormal exit, status=255, signal=0
 [2020-06-23 16:42:30 *4302.3]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Declaration of App\HttpController\Api\Base::onRequest(?string $action) must be compatible with EasySwoole\Http\AbstractInterface\Controller::onRequest(?string $action): ?bool in /root/workspace/EasySwoole/App/HttpController/Api/Base.php on line 12
 [2020-06-23 16:42:30 $4295.0]	WARNING	swManager_check_exit_status: worker#3[pid=4302] abnormal exit, status=255, signal=0
+[2020-06-24 09:02:12 #4800.3]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Call to a member function where() on string in /root/workspace/EasySwoole/App/Model/Video.php:68
+Stack trace:
+#0 /root/workspace/EasySwoole/App/Lib/Cache/Video.php(22): App\Model\Video->getVideoCacheData(Array)
+#1 /root/workspace/EasySwoole/EasySwooleEvent.php(55): App\Lib\Cache\Video->setIndexVideo()
+#2 {main}
+  thrown in /root/workspace/EasySwoole/App/Model/Video.php on line 68
+[2020-06-24 09:02:23 #4856.3]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Call to a member function where() on string in /root/workspace/EasySwoole/App/Model/Video.php:68
+Stack trace:
+#0 /root/workspace/EasySwoole/App/Lib/Cache/Video.php(22): App\Model\Video->getVideoCacheData(Array)
+#1 /root/workspace/EasySwoole/EasySwooleEvent.php(55): App\Lib\Cache\Video->setIndexVideo()
+#2 {main}
+  thrown in /root/workspace/EasySwoole/App/Model/Video.php on line 68
+[2020-06-24 09:03:43 #4929.3]	ERROR	php_swoole_server_rshutdown (ERRNO 503): Fatal error: Uncaught Error: Call to undefined method App\Model\Video::getVideoCacheData() in /root/workspace/EasySwoole/App/Lib/Cache/Video.php:22
+Stack trace:
+#0 /root/workspace/EasySwoole/EasySwooleEvent.php(55): App\Lib\Cache\Video->setIndexVideo()
+#1 {main}
+  thrown in /root/workspace/EasySwoole/App/Lib/Cache/Video.php on line 22
