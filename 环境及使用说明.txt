@@ -10,8 +10,10 @@ Elasticsearch-head插件
 2.使用说明
 
 开启easyswoole服务，在项目根目录执行： php easyswoole start    
-开启Elasticsearch服务，在elastinsearch安装目录bin中执行：./elastinsearch
-独立安装还需要开启redis服务，在安装目录redis/src中执行：./redis-server
+开启Elasticsearch服务，在elastinsearch安装目录bin中执行：./elastinsearch 
+注意事项：elasticsearch服务不要使用root用户开启   在root用户下给予安装目录操作权限：chown -R aipeng:aipeng 安装路径
+		 然后切换至aipeng用户执行开启服务命令
+开启redis服务，在安装目录redis/src中执行：./redis-server
 
 本系统为API接口系统，测试需要手动在浏览器输入地址，如：
 http://127.0.0.1:8000/api/video/index?id=15

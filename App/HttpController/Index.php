@@ -6,17 +6,29 @@ namespace App\HttpController;
 
 use EasySwoole\Http\AbstractInterface\Controller;
 use App\Lib\AliyunSdk\AliVod;
+use Elasticsearch\ClientBuilder;
 
 class Index extends Controller
 {
 
     public function index()
     {
-        $file = EASYSWOOLE_ROOT.'/vendor/easyswoole/easyswoole/src/Resource/Http/welcome.html';
-        if(!is_file($file)){
-            $file = EASYSWOOLE_ROOT.'/src/Resource/Http/welcome.html';
-        }
-        $this->response()->write(file_get_contents($file));
+        // 测试 php-elasticsearch demo
+        $params = [
+            "index" => "imooc_video",
+            "type" => "video",
+            //"id" => 1,
+            'body' => [
+                'query' => [
+                    'match' => [
+                        'name' => '刘德华'
+                    ],
+                ],
+            ],
+        ];
+        $client = ClientBuilder::create()->setHosts(["127.0.0.1:8301"])->build();
+        $result = $client->search($params);
+        return $this->writeJson(200, "OK", $result);
     }
 
     protected function actionNotFound(?string $action)
